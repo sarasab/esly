@@ -3,7 +3,7 @@ class App extends React.Component {
   render() {
     let slider = null;
     if (this.props.icon != 'local_drink'){
-      slider = <input type="range" min={this.props.min} max={this.props.max} onChange={this.props.onChange} value={this.props.value}></input>
+      slider = <input type="range"step={this.props.unit!="steps"?1:1000} min={this.props.min} max={this.props.max} onChange={this.props.onChange} value={this.props.value}></input>
   } 
 
     return (
