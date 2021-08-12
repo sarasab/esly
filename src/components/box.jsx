@@ -1,10 +1,20 @@
 import React from 'react';
-class App extends React.Component {
+class box extends React.Component {
   render() {
+   
     let slider = null;
-    if (this.props.icon != 'local_drink'){
-      slider = <input type="range"step={this.props.unit!="steps"?1:1000} min={this.props.min} max={this.props.max} onChange={this.props.onChange} value={this.props.value}></input>
-  } 
+    if (this.props.icon != 'local_drink') {
+      slider = (
+        <input
+          type="range"
+          step={this.props.unit != 'steps' ? 1 : 1000}
+          min={this.props.min}
+          max={this.props.max}
+          onChange={this.props.onChange}
+          value={this.props.value}
+        ></input>
+      );
+    }
 
     return (
       <div className="box col-sm-3 col-6">
@@ -18,13 +28,15 @@ class App extends React.Component {
           {this.props.value}
           <br />
           {this.props.unit}
+         
+          
+
         </p>
 
         {slider}
-       
       </div>
     );
   }
 }
 
-export default App;
+export default box;

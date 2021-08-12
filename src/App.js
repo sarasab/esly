@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/global.css';
 import Box from './components/box.jsx';
-import {render} from '@testing-library/react';
+
 
 const tempMin = -20;
 const tempMax = 40;
@@ -11,14 +11,17 @@ const stepsMin = 0;
 const stepsMax = 50000;
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       water: 0,
       heart: 120,
       temperature: -10,
       steps: 3000,
+     
+
     };
+
   }
   onStepsChange = (e) => {
     this.setState({steps: e.target.value}, this.calculateWater);
@@ -42,11 +45,13 @@ class App extends React.Component {
     }
     this.setState({water: waterLevel});
   };
-  
 
   render() {
     return (
+
+      
       <div className="container-fluid">
+       
         <div className="row">
           <Box
             icon="local_drink"
